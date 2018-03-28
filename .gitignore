@@ -1,0 +1,5 @@
+*.swp
+.DS_Store
+node_modules
+app/client/public/css/main.css
+app/client/public/js/main.bundle.js

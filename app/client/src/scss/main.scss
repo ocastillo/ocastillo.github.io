@@ -1,0 +1,183 @@
+@import url("/static/css/fontawesome-all.css");
+@import url("https://fonts.googleapis.com/css?family=Roboto:100,100italic,300,300italic,400,400italic");
+
+body {
+    color: #000;
+    font-family: 'Roboto';
+    font-weight: 100;
+    line-height: 1.5em;
+    padding: 0;
+    margin: 0;
+}
+h1, h2 {
+    font-weight: 100;
+    letter-spacing: 0.225em;
+    text-transform: uppercase;
+}
+.page-wrapper {
+    background-color: #2e3842;
+    background-image: url(/static/images/pedernales_bg.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    margin: 0;
+    padding: 0;
+}
+.banner {
+    align-items: center;
+    background-color: rgba(0,0,0,0.4);
+    display: flex;
+    height: 85vh;
+    padding: 0 1em;
+}
+.title {
+    color: #fff;
+    text-align: center;
+    width: 100vw;
+}
+.title h1 {
+    display: inline-block;
+    font-size: 2em;
+    font-weight: 100;
+    letter-spacing: .2em;
+    text-transform: none;
+}
+.title p {
+    font-weight: 100;
+    font-size: 1.25em;
+    letter-spacing: .1em;
+}
+.summary {
+    background-color: #fff;
+    color: #2e3842;
+    padding: 2em 4em;
+    text-align: center;
+}
+.highlights {
+    background-color: #2e3842;
+}
+footer a, footer a:visited,
+.highlights a, .highlights a:visited {
+    color: #fff;
+}
+.highlights .container {
+    display: flex;
+    flex-wrap: wrap;
+}
+.highlights .container:nth-child(even) {
+    flex-direction: row-reverse;
+}
+.highlights .container .box {
+    box-sizing: border-box;
+    color: #fff;
+    flex-basis: 300px;
+    flex-grow: 1;
+    min-height: 220px;
+}
+.highlights .container .box.content {
+    flex-grow: 2;
+    padding: 2em;
+    text-align: center;
+}
+.highlights .container .box.image {
+    color: #fff;
+    line-height: 0;
+}
+.highlights .container .box.image img {
+    width: 100%;
+}
+.my-tools {
+    align-items: center;
+    background-color: #000;
+    display: flex;
+    font-size: 4em;
+    text-align: center;
+}
+.my-tools .tool {
+    flex-grow: 1
+}
+.contact {
+    background-color: #fff;
+    padding: 2em 4em;
+    text-align: center;
+}
+
+.contact-form{
+    max-width: 400px;
+    margin: 10px auto;
+}
+.contact-form input[type="text"],
+.contact-form input[type="date"],
+.contact-form input[type="datetime"],
+.contact-form input[type="email"],
+.contact-form input[type="number"],
+.contact-form input[type="search"],
+.contact-form input[type="time"],
+.contact-form input[type="url"],
+.contact-form textarea,
+.contact-form select 
+{
+    -webkit-transition: all 0.30s ease-in-out;
+    -moz-transition: all 0.30s ease-in-out;
+    -ms-transition: all 0.30s ease-in-out;
+    -o-transition: all 0.30s ease-in-out;
+    outline: none;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    width: 100%;
+    background: #fff;
+    margin-bottom: 4%;
+    border: 1px solid #ccc;
+    padding: 3%;
+    color: #555;
+    font-size: 1em;
+}
+.contact-form input[type="text"]:focus,
+.contact-form input[type="date"]:focus,
+.contact-form input[type="datetime"]:focus,
+.contact-form input[type="email"]:focus,
+.contact-form input[type="number"]:focus,
+.contact-form input[type="search"]:focus,
+.contact-form input[type="time"]:focus,
+.contact-form input[type="url"]:focus,
+.contact-form textarea:focus,
+.contact-form select:focus
+{
+    box-shadow: 0 0 5px #43D1AF;
+    padding: 3%;
+    border: 1px solid #fff;
+}
+
+.contact-form input[type="submit"],
+.contact-form input[type="button"]{
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    width: 100%;
+    padding: 3%;
+    background: #43D1AF;
+    border-bottom: 2px solid #30C29E;
+    border-top-style: none;
+    border-right-style: none;
+    border-left-style: none;    
+    color: #fff;
+    font-size: 1em;
+}
+.contact-form input[type="submit"]:hover,
+.contact-form input[type="button"]:hover{
+    background: #2EBC99;
+}
+
+footer {
+    align-items: center;
+    background-color: #2e3842;
+    color: #fff;
+    display: flex;
+    padding: 1em;
+}
+footer > div {
+    flex-grow: 1
+}
+footer .linkedin {
+    text-align: right;
+}
