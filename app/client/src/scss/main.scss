@@ -104,6 +104,13 @@ footer a, footer a:visited,
 .contact-form{
     max-width: 400px;
     margin: 10px auto;
+
+    .form-error {
+        text-align: left;
+        color: #990000;
+        font-size: .8em;
+        font-weight: bold;
+    }
 }
 .contact-form input[type="text"],
 .contact-form input[type="date"],
@@ -126,7 +133,7 @@ footer a, footer a:visited,
     -moz-box-sizing: border-box;
     width: 100%;
     background: #fff;
-    margin-bottom: 4%;
+    margin-top: 4%;
     border: 1px solid #ccc;
     padding: 3%;
     color: #555;
