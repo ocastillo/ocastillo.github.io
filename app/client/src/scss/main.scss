@@ -106,10 +106,17 @@ footer a, footer a:visited,
     margin: 10px auto;
 
     .form-error {
-        text-align: left;
         color: #990000;
         font-size: .8em;
         font-weight: bold;
+        text-align: left;
+    }
+
+    .form-success {
+        color: #009933;
+        font-size: .8em;
+        font-weight: bold;
+        text-align: left;
     }
 }
 .contact-form input[type="text"],

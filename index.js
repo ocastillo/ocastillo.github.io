@@ -4,6 +4,8 @@ const appConfig = {
     }
 };
 
+require('dotenv').config();
+
 const port = process.env.port || 3002;
 const express = require('express');
 const session = require('express-session');
@@ -33,6 +35,7 @@ app.use((req, res, next) => {
  */
 app.get('/', homeController.index);
 app.get('/home', homeController.index);
+app.post('/contact', homeController.apiContact);
 
 
 app.listen(port || 3000, function () {

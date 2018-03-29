@@ -33,10 +33,11 @@ class HelloMessage extends React.Component {
                                 <p>I currently work for <a href="https://www.saatva.com" target="saatva">Saatva</a>, 
                                     an online high quality mattress company.  I am a member of Saatva's engineering team
                                     working on the full stack using technologies like Node.js, React, PHP, MySQL, and 
-                                    Redis.</p>
+                                    MongoDB.</p>
                                 <p>I also provide related services such as consulting and free-lance development
-                                    when time allows. You can find me on LinkedIn or using the
-                                    contact form below.</p>
+                                    when time allows. You can find me on 
+                                    on <a href="https://www.linkedin.com/in/orlando-castillo-72897a1" target="linkedin_window">LinkedIn</a> or
+                                    using the contact form below.</p>
                             </div>
                             <div className="box image my-tools">
                                 <div className="tool"><i className="fab fa-js-square"></i></div>
@@ -47,7 +48,7 @@ class HelloMessage extends React.Component {
                         <div className="container">
                             <div className="box content">
                                 <h2>I am Orlando</h2>
-                                <p>Being with my family is my favorite thing to do.  I enjoy being outside 
+                                <p>Being with my family is my favorite thing to do.  I also enjoy being outside 
                                     whether it be working in the yard, hiking, biking, or playing soccer.</p>
                             </div>
                             <div className="box image"><img src="/static/images/me.jpg" alt="Photo of Orlando Castillo" /></div>

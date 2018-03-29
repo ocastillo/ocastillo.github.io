@@ -2,8 +2,29 @@ import React from 'react'
 import {render} from 'react-dom'
 import fetch from 'isomorphic-fetch'
 
-const FormError = (props) => {
-  return <div className="form-error">{ props.children }</div>;
+const initialState = {
+  complete: false,
+  formData: {
+    contact_name: '',
+    contact_email: '',
+    contact_subject: '',
+    message: ''
+  },
+  errors: {
+    form: null,
+    contact_name: null,
+    contact_email: null,
+    contact_subject: null,
+    message: null
+  }
+}
+
+const FormError = props => {
+  return <div className="form-error">{ props.children }</div>
+}
+
+const FormSuccess = props => {
+  return <div className="form-success">{ 'Message sent. Thank you!' }</div>
 }
 
 class ContactForm extends React.Component {
@@ -11,28 +32,26 @@ class ContactForm extends React.Component {
     super(props)
     this.handleSubmit = this.handleSubmit.bind(this)
     this.handleFieldChange = this.handleFieldChange.bind(this)
+    this.state = JSON.parse(JSON.stringify(initialState))
+  }
 
-    this.state = {
-      formData: {
-        contact_name: '',
-        contact_email: '',
-        message: ''
-      },
-      errors: {
-        form: null,
-        contact_name: null,
-        contact_email: null,
-        message: null
-      }
-    }
+  clearFormError () {
+    const newState = Object.assign({}, this.state)
+    newState.errors.form = null
+    this.setState(newState)
+  }
+
+  handleSuccess () {
+    const newState = JSON.parse(JSON.stringify(initialState))
+    newState.complete = true
+    this.setState(newState)
   }
 
   validateAll () {
-    console.log('validating...')
     this.validateEmail(this.state.formData.contact_email)
+    this.validateRequired('contact_subject', this.state.formData.contact_subject)
     this.validateRequired('contact_name', this.state.formData.contact_name)
     this.validateRequired('message', this.state.formData.message)
-    console.log('done')
   }
 
   validateEmail (email) {
@@ -68,11 +87,12 @@ class ContactForm extends React.Component {
   handleSubmit (event) {
     event.preventDefault()
 
+    this.clearFormError()
     this.validateAll()
 
-    if(this.state.errors.form
-      || this.state.errors.contact_name
+    if(this.state.errors.contact_name
       || this.state.errors.contact_email
+      || this.state.errors.contact_subject
       || this.state.errors.message) {
         return false
     }
@@ -92,14 +112,12 @@ class ContactForm extends React.Component {
         }
         return response.json()
       }).then(data => {
-        console.log(data)
+        this.handleSuccess()
       }).catch(err => {
         console.log(err)
-        this.setState({
-          errors: {
-            form: err.message
-          }
-        })
+        const newState = Object.assign({}, this.state)
+        newState.errors.form = err.message
+        this.setState(newState)
       })
   }
 
@@ -109,15 +127,22 @@ class ContactForm extends React.Component {
         {this.state.errors.form &&
           <FormError>{ this.state.errors.form }</FormError>
         }
-        <input type="text" name="contact_name" placeholder="Your Name" onChange={ this.handleFieldChange } />
+        {this.state.complete &&
+          <FormSuccess />
+        }
+        <input type="text" name="contact_name" value={ this.state.formData.contact_name } placeholder="Your Name" onChange={ this.handleFieldChange } />
         {this.state.errors.contact_name &&
           <FormError>{ this.state.errors.contact_name }</FormError>
         }
-        <input type="email" name="contact_email" placeholder="Email Address" onChange={ this.handleFieldChange } />
+        <input type="email" name="contact_email" value={ this.state.formData.contact_email } placeholder="Email Address" onChange={ this.handleFieldChange } />
         {this.state.errors.contact_email &&
           <FormError>{ this.state.errors.contact_email }</FormError>
         }
-        <textarea name="message" placeholder="Type your Message" onChange={ this.handleFieldChange }></textarea>
+        <input type="text" name="contact_subject" value={ this.state.formData.contact_subject } placeholder="Subject" onChange={ this.handleFieldChange } />
+        {this.state.errors.contact_subject &&
+          <FormError>{ this.state.errors.contact_subject }</FormError>
+        }
+        <textarea name="message" value={ this.state.formData.message } placeholder="Type your Message" onChange={ this.handleFieldChange }></textarea>
         {this.state.errors.message &&
           <FormError>{ this.state.errors.message }</FormError>
         }
