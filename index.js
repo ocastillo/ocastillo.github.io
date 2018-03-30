@@ -6,7 +6,7 @@ const appConfig = {
 
 require('dotenv').config();
 
-const port = process.env.port || 3002;
+const port = process.env.PORT || 3002;
 const express = require('express');
 const session = require('express-session');
 const expressValidator = require('express-validator');
