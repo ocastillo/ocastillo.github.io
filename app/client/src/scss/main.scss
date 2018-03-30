@@ -118,6 +118,11 @@ footer a, footer a:visited,
         font-weight: bold;
         text-align: left;
     }
+
+    .o-recaptcha {
+        width: 144px;
+        margin: 1em auto;
+    }
 }
 .contact-form input[type="text"],
 .contact-form input[type="date"],

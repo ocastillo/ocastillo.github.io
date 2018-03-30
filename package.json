@@ -30,7 +30,9 @@
     "express-validator": "^4.2.1",
     "isomorphic-fetch": "^2.2.1",
     "react": "^16.0.0",
+    "react-async-script": "^0.9.1",
     "react-dom": "^16.0.0",
+    "react-google-recaptcha": "^0.11.0",
     "sanitize-html": "^1.18.2"
   },
   "devDependencies": {
