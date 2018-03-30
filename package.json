@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "npm run build && node index.js",
+    "postinstall": "npm run build",
     "start-dev": "nodemon --config nodemon.json",
     "dev": "npm-run-all --parallel build-css watch-js build-css watch-css start-dev",
     "test": "echo \"Error: no test specified\" && exit 1",
