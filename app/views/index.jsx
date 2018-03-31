@@ -14,10 +14,7 @@ class HelloMessage extends React.Component {
                     <section className="banner">
                         <div className="title">
                             <h1>Orlando Castillo</h1>
-                            <p>
-                                Web developer
-                                since 1999
-                            </p>
+                            <p>Web developer since 1999</p>
                         </div>
                     </section>
                     <section className="summary">
@@ -32,8 +29,7 @@ class HelloMessage extends React.Component {
                                 <h2>What I Do</h2>
                                 <p>I currently work for <a href="https://www.saatva.com" target="saatva">Saatva</a>, 
                                     an online high quality mattress company.  I am a member of Saatva's engineering team
-                                    working on the full stack using technologies like Node.js, React, PHP, MySQL, and 
-                                    Magento.</p>
+                                    working on the full stack using technologies like Node.js, React, PHP, and MySQL.</p>
                                 <p>I also provide related services such as consulting and free-lance development
                                     when time allows. You can find me on 
                                     on <a href="https://www.linkedin.com/in/orlando-castillo-72897a1" target="linkedin_window">LinkedIn</a> or
