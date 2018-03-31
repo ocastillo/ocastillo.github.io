@@ -21,7 +21,9 @@ class DefaultLayout extends React.Component {
                     <meta name="viewport" content="width=device-width, initial-scale=1" />
                     <meta name="Description" content="Orlando Castillo. Web Developer from Austin, TX" />
                     <title>Orlando Castillo - I build websites and webapps. From Austin, TX</title>
-                    <link rel="stylesheet" href="/static/css/main.css" />
+                    { this.props.headerCss &&
+                        <style dangerouslySetInnerHTML={{ __html: this.props.headerCss }} />
+                    }
                 </head>
                 <body>
                     { this.props.children }

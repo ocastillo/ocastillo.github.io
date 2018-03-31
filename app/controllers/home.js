@@ -1,3 +1,5 @@
+const fs = require('fs');
+const path = require('path');
 const sendgridMailClient = require('@sendgrid/mail');
 const sanitizeHtml = require('sanitize-html');
 
@@ -7,9 +9,11 @@ const validateEmail = (email) => {
 }
 
 exports.index = (req, res) => {
+    const headerCss = fs.readFileSync(path.resolve(__dirname, '../client/public/css/main.css'), 'UTF-8');
+
     res.render('index', { 
         title: 'Web Developer', 
-        bodyCss: 'landing' ,
+        headerCss,
         scripts: ['/static/js/main.bundle.js']
     });
 };
