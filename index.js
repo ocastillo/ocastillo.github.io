@@ -6,6 +6,7 @@ const appConfig = {
 
 require('dotenv').config();
 
+const env = process.env.NODE_ENV || 'development';
 const port = process.env.PORT || 3002;
 const express = require('express');
 const session = require('express-session');
@@ -15,6 +16,14 @@ const app = express();
 const package = require('./package.json');
 const homeController = require('./app/controllers/home');
 
+const forceSsl = (req, res, next) => {
+    if (env === 'production' && req.headers['x-forwarded-proto'] !== 'https') {
+        return res.redirect(['https://', req.get('Host'), req.url].join(''));
+    }
+    return next();
+}
+
+app.use(forceSsl);
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(expressValidator());
