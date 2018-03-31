@@ -14,7 +14,7 @@ class DefaultLayout extends React.Component {
         )
 
         return (
-            <html>
+            <html lang="en">
                 <head>
                     <meta charSet="utf-8" />
                     <meta httpEquiv="X-UA-Compatible" content="IE=Edge" />
