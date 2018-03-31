@@ -19,6 +19,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(expressValidator());
 app.use('/static', express.static('./app/client/public'));
+app.use('/.well-known', express.static('./app/client/public/.well-known'));
 
 app.set('views', __dirname + '/app/views');
 app.set('view engine', 'jsx');
