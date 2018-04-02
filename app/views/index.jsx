@@ -64,7 +64,7 @@ class HelloMessage extends React.Component {
                     <footer>
                         <div>&copy; 2018 Orlando Castillo</div>
                         <div className="linkedin">
-                            <a href="https://www.linkedin.com/in/orlando-castillo-72897a1" target="linkedin_window"><i className="fab fa-linkedin"></i></a>
+                            <a href="https://www.linkedin.com/in/orlando-castillo-72897a1" aria-label="Orlando on LinkedIn" target="linkedin_window"><i className="fab fa-linkedin"></i></a>
                         </div>
                     </footer>
                 </div>

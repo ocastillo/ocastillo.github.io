@@ -150,19 +150,19 @@ class ContactForm extends React.Component {
         {this.state.complete &&
           <FormSuccess />
         }
-        <input type="text" name="contact_name" value={ this.state.formData_contact_name } placeholder="Your Name" onChange={ this.handleFieldChange } />
+        <input type="text" name="contact_name" aria-label="Your Name" value={ this.state.formData_contact_name } placeholder="Your Name" onChange={ this.handleFieldChange } />
         {this.state.errors_contact_name &&
           <FormError>{ this.state.errors_contact_name }</FormError>
         }
-        <input type="email" name="contact_email" value={ this.state.formData_contact_email } placeholder="Email Address" onChange={ this.handleFieldChange } />
+        <input type="email" name="contact_email" aria-label="Your Email Address" value={ this.state.formData_contact_email } placeholder="Your Email Address" onChange={ this.handleFieldChange } />
         {this.state.errors_contact_email &&
           <FormError>{ this.state.errors_contact_email }</FormError>
         }
-        <input type="text" name="contact_subject" value={ this.state.formData_contact_subject } placeholder="Subject" onChange={ this.handleFieldChange } />
+        <input type="text" name="contact_subject" aria-label="Message Subject" value={ this.state.formData_contact_subject } placeholder="Subject" onChange={ this.handleFieldChange } />
         {this.state.errors_contact_subject &&
           <FormError>{ this.state.errors_contact_subject }</FormError>
         }
-        <textarea name="message" value={ this.state.formData_message } placeholder="Type your Message" onChange={ this.handleFieldChange }></textarea>
+        <textarea name="message" aria-label="Your Message" value={ this.state.formData_message } placeholder="Type your Message" onChange={ this.handleFieldChange }></textarea>
         {this.state.errors_message &&
           <FormError>{ this.state.errors_message }</FormError>
         }
