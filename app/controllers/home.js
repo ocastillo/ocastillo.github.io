@@ -9,12 +9,16 @@ const validateEmail = (email) => {
 }
 
 exports.index = (req, res) => {
-    const headerCss = fs.readFileSync(path.resolve(__dirname, '../client/public/css/main.css'), 'UTF-8');
+    fs.readFile(path.resolve(__dirname, '../client/public/css/main.css'), {
+        encoding: 'UTF-8'
+    }, (err, headerCss) => {
+        if (err) throw err;
 
-    res.render('index', { 
-        title: 'Web Developer', 
-        headerCss,
-        scripts: ['/static/js/main.bundle.js']
+        res.render('index', { 
+            title: 'Web Developer', 
+            headerCss,
+            scripts: ['/static/js/main.bundle.js']
+        });
     });
 };
 
