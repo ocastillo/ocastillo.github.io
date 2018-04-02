@@ -8,6 +8,8 @@ require('dotenv').config();
 
 const env = process.env.NODE_ENV || 'development';
 const port = process.env.PORT || 3002;
+
+const compression = require('compression');
 const express = require('express');
 const session = require('express-session');
 const expressValidator = require('express-validator');
@@ -24,6 +26,7 @@ const forceSsl = (req, res, next) => {
 }
 
 app.use(forceSsl);
+app.use(compression());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(expressValidator());
