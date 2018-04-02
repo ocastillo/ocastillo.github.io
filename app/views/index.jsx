@@ -47,7 +47,7 @@ class HelloMessage extends React.Component {
                                 <p>Being with my family is my favorite thing to do.  I also enjoy being outside 
                                     whether it be working in the yard, hiking, biking, or playing soccer.</p>
                             </div>
-                            <div className="box image"><img src="/static/images/me.jpg" alt="Photo of Orlando Castillo" /></div>
+                            <div className="box image"><img data-src="/static/images/me.jpg" alt="Photo of Orlando Castillo" /></div>
                         </div>
                     </section>
                     <section className="contact">
