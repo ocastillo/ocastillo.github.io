@@ -7,11 +7,10 @@ class DefaultLayout extends React.Component {
     }
 
     render() {
-
         const scripts = this.props.scripts || []
         const scriptItems = scripts.map((script, i) =>
             <script src={ script } type={'text/javascript'} key={ i }></script>
-        )
+        );
 
         return (
             <html lang="en">
@@ -26,7 +25,9 @@ class DefaultLayout extends React.Component {
                     }
                 </head>
                 <body>
-                    { this.props.children }
+                    <div id="oc-app">
+                        { this.props.children }
+                    </div>
                     { scriptItems }
                 </body>
             </html>

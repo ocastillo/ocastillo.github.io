@@ -7,7 +7,7 @@ const appConfig = {
 require('dotenv').config();
 
 const env = process.env.NODE_ENV || 'development';
-const port = process.env.PORT || 3002;
+const port = process.env.PORT || 3030;
 
 const compression = require('compression');
 const express = require('express');
@@ -30,16 +30,15 @@ app.use(compression());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(expressValidator());
-app.use('/static', express.static('./app/client/public'));
+app.use('/static', express.static('./public'));
 app.use('/.well-known', express.static('./app/client/public/.well-known'));
 
 app.set('views', __dirname + '/app/views');
 app.set('view engine', 'jsx');
-app.engine('jsx', require('express-react-views').createEngine());
+app.engine('jsx', require('express-react-views').createEngine({doctype: '<!DOCTYPE html>'}));
 
 // Setup Locals
 app.use((req, res, next) => {
-    //app.locals.userInfo = getUserInfo(req.user);
     next();
 });
 

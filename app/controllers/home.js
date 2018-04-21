@@ -9,15 +9,14 @@ const validateEmail = (email) => {
 }
 
 exports.index = (req, res) => {
-    fs.readFile(path.resolve(__dirname, '../client/public/css/main.css'), {
+    fs.readFile(path.resolve(__dirname, '../../public/css/main.css'), {
         encoding: 'UTF-8'
     }, (err, headerCss) => {
         if (err) throw err;
 
-        res.render('index', { 
+        res.render('pages/home/homePage', {
             title: 'Web Developer', 
-            headerCss,
-            scripts: ['/static/js/main.bundle.js']
+            headerCss
         });
     });
 };
