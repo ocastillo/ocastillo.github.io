@@ -23,7 +23,7 @@ class HomeView extends React.Component {
                     <div className="container">
                         <div className="box content">
                             <h2>What I Do</h2>
-                            <p>I currently work for <a href="https://www.macmillanlearning.com" target="job">Macmillan Learning</a>. 
+                            <p>I currently work for <a href="https://www.macmillanlearning.com" target="job">Macmillan Learning</a> as a developer and team lead. 
                                 As a member of Macmillan's engineering team, I
                                 work on the full stack using technologies like Node.js, React, PHP, and MySQL.</p>
                             <p>I also provide related services such as consulting and free-lance development
