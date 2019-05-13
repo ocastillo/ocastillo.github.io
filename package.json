@@ -9,7 +9,7 @@
     "start-dev": "nodemon --config nodemon.json",
     "dev": "npm-run-all --parallel build-css watch-js build-css watch-css start-dev",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack -p && node-sass --output-style compressed app/scss -o public/css",
+    "build": "webpack -p && node-sass --output-style compressed app/scss -o public/css && node build-static.js",
     "watch-js": "webpack -d --watch",
     "build-css": "node-sass --output-style compressed app/scss -o public/css",
     "watch-css": "node-sass --output-style compressed --watch app/scss -o public/css"
@@ -39,7 +39,7 @@
   },
   "devDependencies": {
     "concurrently": "^3.5.1",
-    "node-sass": "^4.5.3",
+    "node-sass": "^4.12.0",
     "nodemon": "^1.17.2",
     "npm-run-all": "^4.1.2",
     "webpack": "^3.8.1"

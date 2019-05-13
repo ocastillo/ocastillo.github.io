@@ -2,7 +2,9 @@
   "restartable": "rs",
   "ignore": [
     ".git",
-    "node_modules/**/node_modules"
+    "node_modules/**/node_modules",
+    "index.html",
+    "public/*"
   ],
   "verbose": true,
   "execMap": {
@@ -15,5 +17,9 @@
   "env": {
     "NODE_ENV": "development"
   },
-  "ext": "js json jsx"
+  "ext": "js json jsx",
+  "events": {
+    "start": "node build-static.js",
+    "restart": "node build-static.js"
+  }
 }

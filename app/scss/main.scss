@@ -1,4 +1,4 @@
-@import url("/static/css/fontawesome-all.css");
+@import url("/public/css/fontawesome-all.css");
 @import url("https://fonts.googleapis.com/css?family=Roboto:100,100italic,300,300italic,400,400italic");
 
 body {
@@ -24,7 +24,7 @@ h1, h2 {
 }
 .page-wrapper {
     background-color: #2e3842;
-    background-image: url(/static/images/pedernales_bg_sm.jpg);
+    background-image: url(/public/images/pedernales_bg_sm.jpg);
     background-size: cover;
     background-attachment: fixed;
     margin: 0;
@@ -110,6 +110,15 @@ footer a, footer a:visited,
     background-color: #fff;
     padding: 2em 4em;
     text-align: center;
+}
+
+.contact-link {
+    font-size: 48px;
+
+    a, a:visited {
+        text-decoration: none;
+        color: #000;
+    }
 }
 
 .contact-form{

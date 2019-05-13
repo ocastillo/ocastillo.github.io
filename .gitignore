@@ -2,5 +2,3 @@
 .DS_Store
 .env
 node_modules
-public/css/main.css
-public/js/main.bundle.js
